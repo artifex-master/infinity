@@ -132,7 +132,7 @@ main { width: 100%; background: var(--silver-main); }
 
 .head {
   width: 100%;
-  height: 100%;
+  height: 120%;
   background: var(--sky-blue);
   position: relative;
   overflow: hidden;
