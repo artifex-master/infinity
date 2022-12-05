@@ -96,7 +96,7 @@ body {
 :focus-visible { outline-offset: 4px; }
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background-color: var(--silver-main); }
-::-webkit-scrollbar-thumb { background-color: #4d4d4d; }
+::-webkit-scrollbar-thumb { background-color: #4d4d4d; border-radius: 33px; }
 
 ::placeholder {
   color: #fff;
