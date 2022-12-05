@@ -22,7 +22,7 @@
   --black: #000;
   --white: #fff;
   --sky-blue: #36A9E1;
-  --silver-main: #E5E5E5;
+  --silver-main: #f0f0f0;
   --gray-main: #3B3F43;
 
 
@@ -82,14 +82,14 @@ address { font-style: normal; }
 
 html {
   font-family: var(--ff-muller-reg);
+  background-color: #f0f0f0;
   font-size: var(--fs-3);
-  line-height: var(--lh-3);
+  line-height: 26px;
   font-weight: var(--fw-400);
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--silver-main);
   color: var(--gray-main);
 }
 
@@ -98,6 +98,14 @@ body {
 ::-webkit-scrollbar-track { background-color: var(--silver-main); }
 ::-webkit-scrollbar-thumb { background-color: #4d4d4d; }
 
+::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+::ms-input-placeholder { color: #fff; }
+
+::ms-input-placeholder { color: #fff; }
 
 .btn-white {
   background: var(--white);
@@ -132,19 +140,28 @@ main { width: 100%; background: var(--silver-main); }
 
 .head {
   width: 100%;
-  height: 120%;
+  height: auto;
   background: var(--sky-blue);
+  border-radius: 0 0 50px 50px;
   position: relative;
   overflow: hidden;
 }
 
 .head-bg-lines-wrap {
-  width: 100%;
-  height: 100vh;
   position: absolute;
   z-index: 1;
   top: -13px;
-  left: -120px;
+  left: -251px;
+}
+
+.mobile-bg-lines-wrap {
+  display: none;
+
+}
+
+.head-bg-lines {
+  width: 2606px;
+  height: 1522px;
 }
 
 .head-container {
@@ -160,8 +177,13 @@ main { width: 100%; background: var(--silver-main); }
   margin-block-end: 160px;
 }
 
-header {
+.header-wrap {
   width: 100%;
+}
+
+header {
+  width: 1237px;
+  margin: 0 auto;
   background-color: var(--white);
   border-radius: 100px;
   padding-left: 72px;
@@ -500,7 +522,7 @@ header {
 .services { 
   width: 100%;
   height: 500vh; 
-  background: url("../images/main-bg.png") 80px 213px no-repeat;
+  background: url("../images/main-bg.png") 0 260px no-repeat;
   color: var(--gray-main);
   padding-block-start: 98px;
   padding-block-end: 56px;
@@ -571,7 +593,7 @@ header {
 
 .txt-block {
   position: absolute;
-  top: 950px;
+  top: 980px;
   left: 0;
 }
 
@@ -591,8 +613,8 @@ header {
 
 .txt-block-three {
   position: absolute;
-  top: 1480px;
-  left: 701px;
+  top: 1517px;
+  left: 740px;
 }
 
 .block__title-three {
@@ -606,8 +628,8 @@ header {
 
 .txt-block-four {
   position: absolute;
-  top: 1900px;
-  left: 0;
+  top: 1950px;
+  left: 50px;
 }
 
 .block__title-four {
@@ -635,8 +657,6 @@ header {
   .head__outer {
     margin-block-start: 82px;
   }
-
-  .head { height: auto; }
 
 }
 
@@ -687,6 +707,12 @@ header {
   }
 }
 
+@media only screen and (max-width: 1600px) {
+  .block__content-three {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 1562px) {
   .txt-block-three {
     top: 1400px;
@@ -694,6 +720,10 @@ header {
 
   .head__outer {
     margin-block-start: 72px;
+  }
+
+  .services {  
+    background: url("../images/main-bg.png") -40px 260px no-repeat;
   }
 }
 
@@ -781,6 +811,23 @@ header {
     width: 40%;
   }
 
+
+
+  .head-bg-lines {
+    width: 2036px;
+    height: 1189px;
+  }
+
+  header {
+    width: 966px;
+    padding-left: 45px;
+
+  }
+
+  .head-bg-lines-wrap {
+    left: -200px;
+  }
+
 }
 
 @media only screen and (max-width: 1318px) {
@@ -801,6 +848,27 @@ header {
   .head-bg-lines-wrap {
     top: 70px;
     left: 45px;
+  }
+
+  header {
+    width: 825px;
+    padding-left: 45px;
+  }
+
+  .head-bg-lines {
+    width: 1737px;
+    height: 1015px;
+  }
+
+  .head-bg-lines-wrap {
+    top: 80px;
+    left: -200px;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .services {  
+    background: url("../images/bg-1500.png") -40px 166px no-repeat;
   }
 }
 
@@ -914,11 +982,22 @@ header {
   }
 
   .head-bg-lines-wrap {
-    left: 32px;
+    display: none;
   }
 
   .hero-mobile {
     display: block;
+  }
+
+  .mobile-bg-lines-wrap {
+    display: block;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    top: -74px;
+    left: 0;
   }
 
 
@@ -931,6 +1010,12 @@ header {
   .txt-block-one {
     width: 48%;
   } 
+}
+
+@media only screen and (max-width: 980px) {
+  .services {  
+    background: url("../images/bg-1170.png") -40px 140px no-repeat;
+  }
 }
 
 @media only screen and (max-width: 961px) {
@@ -948,11 +1033,15 @@ header {
   .block__content-four {
     width: 46%;
   }
+
+  .mobile-bg-lines-wrap {
+    top: 0;
+  }
 }
 
 @media only screen and (max-width: 920px) {
   .services {  
-    background: url("../images/bg-920.png") 0 160px no-repeat;
+    background: url("../images/bg-920.png") 12px 180px no-repeat;
   }
 
   .services__title {
@@ -975,7 +1064,7 @@ header {
   }
 
   .txt-block-one {
-    width: 58%;
+    width: 50%;
   }
 
   
@@ -1022,20 +1111,51 @@ header {
 
 }
 
+@media only screen and (max-width: 850px) {
+  .txt-block { top: 520px; }
+
+  .services {  
+    background: url("../images/bg-920.png") 0 219px no-repeat;
+  }
+
+  .txt-block-three {
+    top: 748px;
+  }
+
+  .txt-block-four {
+    top: 1000px;
+    left: 46px;
+  }
+}
+
 @media only screen and (max-width: 790px) {
   .block__content-three { width: 140px; }
+
+  .services {  
+    background: url("../images/bg-920.png") -28px 219px no-repeat;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .head-bg-lines-wrap {
     left: -880px;
   }
+
+  .mobile-bg-lines-wrap {
+    top: 10px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .txt-block-one {
+    width: 60%;
+  }
 }
 
 
 @media only screen and (max-width: 700px) {
   .services {  
-    background: url("../images/bg-920.png") -30px 180px no-repeat;
+    background: url("../images/bg-920.png") -30px 190px no-repeat;
   }
 
   .container { width: 65%; }
@@ -1050,6 +1170,26 @@ header {
     width: 68%;
   }
 
+  .mobile-bg-lines-wrap {
+    top: 42px;
+  }
+
+}
+
+@media only screen and (max-width: 677px) {
+  .services {  
+    background: url("../images/bg-920.png") -30px 205px no-repeat;
+  }
+
+  .block__content-one { width: 54%; }
+
+  .block__title-one {
+    width: 36%;
+  }
+
+  .block__title-four {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -1071,7 +1211,7 @@ header {
 
 @media only screen and (max-width: 640px) {
   .services {  
-    background: url("../images/bg-920.png") -38px 170px no-repeat;
+    background: url("../images/bg-920.png") -38px 200px no-repeat;
   }
 
   .txt-block-one {
@@ -1174,6 +1314,13 @@ header {
     height: 64px;
   }
 
+  .mobile-bg-lines-wrap {
+    top: 88px;
+  }
+
+  .head__outer {
+    margin-block-end: 53px;
+  }
 
 
 }
@@ -1181,6 +1328,10 @@ header {
 @media only screen and (max-width: 540px) {
   .hero-mobile__title p {
     width: 80%;
+  }
+
+  .mobile-bg-lines-wrap {
+    top: 114px;
   }
 }
 
@@ -1458,6 +1609,10 @@ header {
 
   .txt-block-four {
     top: 1620px;
+  }
+
+  .mobile-bg-lines-wrap {
+    top: 140px;
   }
 
 }
